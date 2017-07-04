@@ -41,6 +41,7 @@ class Blog extends Component {
         <p>Blog</p>
         <p>{blog.title}</p>
         <p>{blog.id}</p>
+        <p><Link to={'/'} className="btn btn-primary">Regresar</Link></p>
       </article>
     );
   }

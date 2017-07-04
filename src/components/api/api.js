@@ -1,20 +1,15 @@
+import axios from 'axios';
 const baseUrl = 'http://localhost:3002';
 
 const api = {
   blogs: {
-    async getBlogs() {
-      const response = await fetch(`${baseUrl}/blogs`);
-      const data = await response.json();
-      return data;
+    getBlogs() {
+      const response = axios.get('http://localhost:3002/blogs');
+      return response;
     },
     async postBlogs(data) {
-      const response = await fetch(`${baseUrl}/blogs`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: data,
-      });
+      const response = axios.post('http://localhost:3002/blogs', data);
+      return response;
     },
     async deleteBlogs(id) {
       fetch(`${baseUrl}/blogs/${id}`, {
